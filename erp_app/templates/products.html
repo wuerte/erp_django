@@ -1,10 +1,21 @@
-{% extends "sub_template.html" %}
-
-
-{% block subtitle %}
-Products
-{% endblock %}
+{% extends "sub_template_inventory.html" %}
 
 {% block page %}
-    <p>elko</p>
+    All products list:
+    <br/>
+    <br/>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>name</th>
+            <th>price</th>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
 {% endblock %}

@@ -6,8 +6,7 @@
 
         <div style="margin-left: 10px; padding: 5px;">
             <a class="navbar-brand" href="#">
-                {% block subtitle %}
-                {% endblock %} 
+                Orders
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,17 +16,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Orders</a>
+                <a class="nav-link" href="#">All Orders</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Customers</a>
+            <a class="nav-link" href="#">Add Order</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Inventory</a>
+                <a class="nav-link" href="#">Analytics</a>
             </li>
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
                 <a class="nav-link" href="#">Settings</a>
-            </li>
+            </li> {% endcomment %}
         </ul>
         </div>
         
