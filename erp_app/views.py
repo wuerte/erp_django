@@ -20,9 +20,15 @@ def products(request):
 def add_product(request):
     return render(request, 'add_product.html', context={})
 
+
 def add_product_record(request):
     obj_name = request.POST['name']
     obj_price = request.POST['price']
     new_rec = Product(name=obj_name, price=obj_price)
     new_rec.save()
     return HttpResponseRedirect(reverse('products'))
+
+
+def product_form(request, id):
+    product = Product.objects.get(id=id)
+    return render(request, 'product_form_view.html', context= {'product': product})

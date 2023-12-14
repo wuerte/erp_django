@@ -12,7 +12,7 @@
         <tbody>
             {% for product in products %}
                 <tr>
-                    <td>{{product.name}}</td>
+                    <td><a href ="/product_form/{{product.id}}">{{product.name}}</a></td>
                     <td>{{product.price}}</td>
                 </tr>
             {% endfor %}
