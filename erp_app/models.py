@@ -12,6 +12,10 @@ class Company(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     price = models.FloatField(default=0.0, null=True, blank=True)
+    cost = models.FloatField(default=0.0, null=True, blank=True)
+    weight = models.FloatField(default=0.0, null=True, blank=True)
+    on_hand_qty = models.FloatField(default=0.0, null=True, blank=True)
+    #product_categ
     #TODO on_stock_qty field, uom field and uom model, category model and category field, currency field
 
 
