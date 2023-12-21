@@ -8,12 +8,14 @@
         <thead class="thead-dark">
             <th>name</th>
             <th>price</th>
+            <th>quantity</th>
         </thead>
         <tbody>
             {% for product in products %}
                 <tr>
                     <td><a href ="/product_form/{{product.id}}">{{product.name}}</a></td>
                     <td>{{product.price}}</td>
+                    <td>{{product.on_hand_qty}}</td>
                 </tr>
             {% endfor %}
         </tbody>    

@@ -3,6 +3,10 @@
 {% block page %}
 
     Product name: {{product.name}}<br/>
-    Product price: {{product.price}}<br/><br/>
+    Product price: {{product.price}}<br/>
+    Product cost: {{product.cost}}<br/>
+    Product weight: {{product.weight}}<br/>
+    Product on hand quantity {{product.on_hand_qty}}<br/>
+    <br/>
     <a href="/delete_product/{{product.id}}" class="btn btn-primary">Delete product</a>
 {% endblock %}
