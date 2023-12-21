@@ -3,6 +3,6 @@
 {% block page %}
 
     Product name: {{product.name}}<br/>
-    Product price: {{product.price}}
-
+    Product price: {{product.price}}<br/><br/>
+    <a href="/delete_product/{{product.id}}" class="btn btn-primary">Delete product</a>
 {% endblock %}

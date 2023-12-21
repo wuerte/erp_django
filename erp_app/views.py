@@ -32,3 +32,9 @@ def add_product_record(request):
 def product_form(request, id):
     product = Product.objects.get(id=id)
     return render(request, 'product_form_view.html', context= {'product': product})
+
+
+def delete_product(request, id):
+    product = Product.objects.get(id=id)
+    product.delete()
+    return HttpResponseRedirect(reverse('products'))
