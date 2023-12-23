@@ -8,6 +8,7 @@ class Company(models.Model):
     mail = models.CharField(max_length=50, null=True, blank=True)
     phone = models.CharField(max_length=14, null=True, blank=True) #TODO validacja
     #TODO currency field
+
     
 class Product(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
@@ -21,3 +22,20 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+    @staticmethod
+    def get_stock_valuation_list() -> list:
+        stock_valuation = []     
+        products = Product.objects.all()
+        for product in products:
+            cost = 0.0 if product.cost == None else product.cost
+            qty = 0.0 if product.on_hand_qty == None else product.on_hand_qty
+            valuation = cost * qty
+            dict = {
+                'name': product.name,
+                'quantity': product.on_hand_qty,
+                'cost': product.cost,
+                'valuation': valuation,
+            }
+            stock_valuation.append(dict)
+        return sorted(stock_valuation, key=lambda d: d['valuation'], reverse=True)  

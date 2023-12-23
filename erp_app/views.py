@@ -38,3 +38,9 @@ def delete_product(request, id):
     product = Product.objects.get(id=id)
     product.delete()
     return HttpResponseRedirect(reverse('products'))
+
+
+def product_analytics(request):
+    stock_valuation_list = Product.get_stock_valuation_list()
+    context= {'svl': stock_valuation_list}
+    return render(request, 'product_analysis.html', context)

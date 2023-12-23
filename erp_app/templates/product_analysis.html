@@ -1,0 +1,29 @@
+{% extends "sub_template_inventory.html" %}
+
+{% block page %}
+    Stock valuation list:
+    <br/>
+    <br/>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>name</th>
+            <th>quantity</th>
+            <th>cost</th>
+            <th>valuation</th>
+        </thead>
+        <tbody>
+            {% for product in svl %}
+                <tr>
+                    {% comment %} <td>{{product['name']}}</a></td>
+                    <td>{{product['quantity']}}</td>
+                    <td>{{product['cost']}}</td>
+                    <td>{{product['valuation']}}</td> {% endcomment %}
+                    <td>{{product.name}}</a></td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.cost}}</td>
+                    <td>{{product.valuation}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+{% endblock %}
