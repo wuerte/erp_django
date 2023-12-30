@@ -24,7 +24,10 @@ def add_product(request):
 def add_product_record(request):
     obj_name = request.POST['name']
     obj_price = request.POST['price']
-    new_rec = Product(name=obj_name, price=obj_price)
+    obj_weight= request.POST['weight']
+    obj_cost= request.POST['cost']
+    obj_qty= request.POST['qty']
+    new_rec = Product(name=obj_name, price=obj_price, cost=obj_cost, on_hand_qty = obj_qty, weight= obj_weight)
     new_rec.save()
     return HttpResponseRedirect(reverse('products'))
 
