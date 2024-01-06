@@ -60,4 +60,6 @@ def customer_form(request, id):
 
 
 def delete_customer(request, id):
-    
+    customer = Company.objects.get(id=id)
+    customer.delete()
+    return HttpResponseRedirect(reverse('customers'))
