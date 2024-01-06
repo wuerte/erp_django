@@ -20,10 +20,16 @@ from . import views
 
 urlpatterns = [
     path('home', views.home, name="home"),
+    
     path('products', views.products, name="products"),
     path('add_product', views.add_product, name="add_product"),
     path('add_product_record/', views.add_product_record, name="add_product_record"),
     path('product_form/<int:id>', views.product_form, name="product_form"),
     path('delete_product/<int:id>', views.delete_product, name="delete_product"),
     path('product_analytics', views.product_analytics, name="product_analytics"),
+    
+    path('customers', views.customers, name="customers"),
+    path('customer_form/<int:id>', views.customer_form, name="customer_form"),
+    path('delete_customer/<int:id>', views.delete_customer, name="delete_customer"),
+
 ]

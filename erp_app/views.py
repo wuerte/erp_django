@@ -47,3 +47,17 @@ def product_analytics(request):
     stock_valuation_list = Product.get_stock_valuation_list()
     context= {'svl': stock_valuation_list}
     return render(request, 'product_analysis.html', context)
+
+
+def customers(request):
+    all_customers = Company.objects.all()
+    return render(request, 'customers.html', context={'all_customers': all_customers})
+
+
+def customer_form(request, id):
+    customer = Company.objects.get(id=id)
+    return render(request, 'customer_form_view.html', context= {'customer': customer})
+
+
+def delete_customer(request, id):
+    

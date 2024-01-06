@@ -1,0 +1,12 @@
+{% extends "sub_template_customers.html" %}
+
+{% block page %}
+
+    Customer name: {{customer.name}}<br/>
+    Customer NIP: {{customer.nip}}<br/>
+    Customer mail: {{customer.mail}}<br/>
+    Customer phone: {{customer.phone}}<br/>
+    <br/>
+    <a href="/delete_customer/{{customer.id}}" class="btn btn-primary">Delete customer</a>
+
+{% endblock %}

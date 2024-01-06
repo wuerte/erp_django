@@ -1,0 +1,21 @@
+{% extends "sub_template_customers.html" %}
+
+{% block page %}
+    All Customers list:
+    <br/>
+    <br/>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>name</th>
+            <th>NIP</th>
+        </thead>
+        <tbody>
+            {% for customer in all_customers %}
+                <tr>
+                    <td><a href ="/customer_form/{{customer.id}}">{{customer.name}}</a></td>
+                    <td>{{customer.nip}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+{% endblock %}
