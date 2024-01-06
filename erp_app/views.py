@@ -63,3 +63,17 @@ def delete_customer(request, id):
     customer = Company.objects.get(id=id)
     customer.delete()
     return HttpResponseRedirect(reverse('customers'))
+
+
+def add_customer(request):
+    return render(request, 'add_customer.html', context={})
+
+
+def add_customer_record(request):
+    obj_name = request.POST['name']
+    obj_nip = request.POST['nip']
+    obj_mail= request.POST['mail']
+    obj_phone= request.POST['phone']
+    new_rec = Company(name=obj_name, nip=obj_nip, mail=obj_mail, phone= obj_phone)
+    new_rec.save()
+    return HttpResponseRedirect(reverse('customers'))

@@ -1,0 +1,21 @@
+{% extends "sub_template_customers.html" %}
+
+{% block page %}
+
+<form action="/add_customer_record/" method="post">
+    {% csrf_token %}
+    Add customer:
+    <br/>
+    <br/>
+    Name:
+    <input type="text"   name="name"><br><br>
+    NIP:
+    <input type="text"   name="nip"><br><br>
+    Mail:
+    <input type="text"   name="mail"><br><br>
+    Phone:
+    <input type="text"   name="phone"><br><br>
+    <input type="submit" value="Submit">
+</form> 
+
+{% endblock %}

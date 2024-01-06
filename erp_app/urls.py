@@ -31,5 +31,7 @@ urlpatterns = [
     path('customers', views.customers, name="customers"),
     path('customer_form/<int:id>', views.customer_form, name="customer_form"),
     path('delete_customer/<int:id>', views.delete_customer, name="delete_customer"),
+    path('add_customer', views.add_customer, name="add_customer"),
+    path('add_customer_record/', views.add_customer_record, name="add_customer_record"),
 
 ]
