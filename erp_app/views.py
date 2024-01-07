@@ -77,3 +77,8 @@ def add_customer_record(request):
     new_rec = Company(name=obj_name, nip=obj_nip, mail=obj_mail, phone= obj_phone)
     new_rec.save()
     return HttpResponseRedirect(reverse('customers'))
+
+
+def orders(request):
+    all_orders = Order.objects.all()
+    return render(request, 'orders.html', context={'all_orders': all_orders})

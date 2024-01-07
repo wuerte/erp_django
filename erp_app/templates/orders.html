@@ -1,0 +1,25 @@
+{% extends "sub_template_orders.html" %}
+
+{% block page %}
+    All Orders list:
+    <br/>
+    <br/>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>name</th>
+            <th>customer</th>
+            <th>date</th>
+            <th>amount</th>
+        </thead>
+        <tbody>
+            {% for order in all_orders %}
+                <tr>
+                    <td><a href ="/order_form/{{order.id}}">{{order.name}}</a></td>
+                    <td>{{order.customer.name}}</td>
+                    <td>{{order.date}}</td>
+                    <td>to fix</td>
+                </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+{% endblock %}
