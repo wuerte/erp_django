@@ -91,3 +91,9 @@ def order_form(request, id):
                'lines': lines
                }
     return render(request, 'order_form_view.html', context)
+
+
+def delete_order(request, id):
+    order = Order.objects.get(id=id)
+    order.delete()
+    return HttpResponseRedirect(reverse('orders'))

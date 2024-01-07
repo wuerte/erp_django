@@ -36,6 +36,7 @@ urlpatterns = [
     
     path('orders', views.orders, name="orders"),
     path('order_form/<int:id>', views.order_form, name="order_form"),
+    path('delete_order/<int:id>', views.delete_order, name="delete_order"),
 
 
 ]
