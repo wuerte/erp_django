@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+
 
 #TODO models to add: UoM, product_categ, currency
 
@@ -39,3 +41,15 @@ class Product(models.Model):
             }
             stock_valuation.append(dict)
         return sorted(stock_valuation, key=lambda d: d['valuation'], reverse=True)  
+    
+    
+class Order(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    date = models.DateField(null= True, blank = True, default=datetime.date.today)
+    customer = models.ForeignKey(Company, on_delete=models.CASCADE)
+
+
+class OrderLine(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE) 
+    quantity = models.FloatField(default=0.0, null=True, blank=True)
