@@ -35,6 +35,7 @@ urlpatterns = [
     path('add_customer_record/', views.add_customer_record, name="add_customer_record"),
     
     path('orders', views.orders, name="orders"),
-    
+    path('order_form/<int:id>', views.order_form, name="order_form"),
+
 
 ]

@@ -1,0 +1,27 @@
+{% extends "sub_template_orders.html" %}
+
+{% block page %}
+
+    Order name: {{order.name}}<br/>
+    Order date: {{order.date}}<br/>
+    Customer: {{ order.customer.name }} </br>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <th>product</th>
+            <th>quantiy</th>
+        </thead>
+        <tbody>
+        {% for line in lines %}
+            <tr>
+                <td>{{line.product.name}}</td>
+                <td>{{line.quantity}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <br/>
+    <a href="/delete_order/{{order.id}}" class="btn btn-primary">Delete order</a>
+
+{% endblock %}

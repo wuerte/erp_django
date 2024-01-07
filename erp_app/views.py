@@ -82,3 +82,12 @@ def add_customer_record(request):
 def orders(request):
     all_orders = Order.objects.all()
     return render(request, 'orders.html', context={'all_orders': all_orders})
+
+
+def order_form(request, id):
+    order= Order.objects.get(id=id)
+    lines = OrderLine.objects.filter(order=id)
+    context = {'order': order,
+               'lines': lines
+               }
+    return render(request, 'order_form_view.html', context)
